@@ -71,9 +71,10 @@
             <textarea type="text" id="address" placeholder="Enter Student's Address" cols="30" rows="5" formControlName="address"></textarea>
         </div>
 
-        <button class="ui secondary button" type="submit"><i class="icon save"></i>Save</button>
+        <button [disabled]="!studentForm.valid" class="ui secondary button" type="submit"><i class="icon save"></i>Save</button>
         <button [disabled]="!studentForm.valid" class="ui red button" type="submit"><i
-                class="icon save"></i>Cancel</button>
+                class="icon undo"></i>Cancel</button>
+
 
 
     </form>
