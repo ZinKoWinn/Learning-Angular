@@ -1,0 +1,80 @@
+<h1><i class="icon plus"></i>Student Edit</h1>
+<div class="ui grid">
+    <form [formGroup]="studentForm" (ngSubmit)="save()" class="ui centered form ten wide center column error">
+
+        <div class="ui success message">
+            <div class="header">Form Completed</div>
+            <p>You're all signed up for the newsletter.</p>
+        </div>
+
+        <div class="form-group">
+            <div class="field">
+                <label for="name">Name</label>
+                <div class="ui icon input">
+                    <input type="text" id="name" placeholder="Enter Student's Name" class="form-control" formControlName="name" required>
+                    <i class="icon inverted red  delete" *ngIf="name.invalid"></i>
+                    <i class="icon inverted green check circle outline" *ngIf="name.valid"></i>
+                </div>
+            </div>
+
+            <div *ngIf="name.invalid && name.touched" class="alert alert-danger">
+
+                <div class="ui error message">
+                    <div class="header">Warning</div>
+                    <p>Student's name must have at least 4 characters.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="field">
+                <label for="phone">Phone</label>
+                <div class="ui icon input">
+                    <input type="tel" id="phone" placeholder="Enter Student's Phone Number" class="form-control" formControlName="phone" required>
+                    <i class="icon inverted red delete" *ngIf="phone.invalid"></i>
+                    <i class="icon inverted green check circle outline" *ngIf="phone.valid"></i>
+                </div>
+            </div>
+            <div *ngIf="phone.invalid && phone.touched" class="alert alert-danger">
+
+                <div class="ui error message">
+                    <div class="header">Warning</div>
+                    <p>Student's phone must have at least 4 characters.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="field">
+                <label for="email">Email</label>
+                <div class="ui icon input">
+                    <input type="email" id="email" placeholder="Enter Student's Email" class="form-control" formControlName="email">
+                    <i class="icon inverted red delete" *ngIf="email.invalid"></i>
+                    <i class="icon inverted green  check circle outline" *ngIf="email.valid"></i>
+                </div>
+
+            </div>
+            <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
+
+                <div class="ui error message">
+                    <div class="header">Warning</div>
+                    <p>Student's phone must have at least 4 characters.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="address">Address</label>
+            <textarea type="text" id="address" placeholder="Enter Student's Address" cols="30" rows="5" formControlName="address"></textarea>
+        </div>
+
+        <button class="ui secondary button" type="submit"><i class="icon save"></i>Save</button>
+        <button [disabled]="!studentForm.valid" class="ui red button" type="submit"><i
+                class="icon save"></i>Cancel</button>
+
+
+    </form>
+</div>

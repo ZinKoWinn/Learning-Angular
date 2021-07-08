@@ -1,0 +1,21 @@
+<h1><i class="icon users"></i>Student List</h1>
+<table class="ui table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of list">
+            <td>{{s.id}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.phone}}</td>
+            <td>{{s.email}}</td>
+            <td>{{s.address}}</td>
+        </tr>
+    </tbody>
+</table>
